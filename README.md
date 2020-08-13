@@ -12,6 +12,7 @@ home page link: https://fathomless-cove-54226.herokuapp.com/
 "description": "Powered by Spring Boot & MongoDB Atlas",
 "user": null
 },
+
 {
 "name": "getAll",
 "link": "https://fathomless-cove-54226.herokuapp.com/api/users/",
