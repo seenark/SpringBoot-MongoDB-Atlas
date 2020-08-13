@@ -1,5 +1,7 @@
 package demo.demo.Users;
 
+import java.lang.StackWalker.Option;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -7,5 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends MongoRepository<UserModel,String>{
-    public Optional<UserModel> findByFirstName(String name);
+    public Optional<List<UserModel>> findByFirstName(String name);
 }

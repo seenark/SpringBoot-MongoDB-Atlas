@@ -21,7 +21,7 @@ public class UserService {
     public List<UserModel> getAllUsers() {
         return userRepository.findAll();
     }
-    public Optional<UserModel> getUserByFirstName(String firstName) {
+    public Optional<List<UserModel>> getUserByFirstName(String firstName) {
         return userRepository.findByFirstName(firstName);
     }
     public Optional<UserModel> getUserById(String id) {

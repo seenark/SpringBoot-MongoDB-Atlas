@@ -30,8 +30,8 @@ public class UserController {
     }
 
     @GetMapping(path = "/findByFirstName/{firstName}")
-    public UserModel getUserByFirstName(@PathVariable(name = "firstName") final String firstName) {
-        final Optional<UserModel> user = userService.getUserByFirstName(firstName);
+    public List<UserModel> getUserByFirstName(@PathVariable(name = "firstName") final String firstName) {
+        Optional<List<UserModel>> user = userService.getUserByFirstName(firstName);
         if (user.isPresent()) {
             return user.get();
         } else {
