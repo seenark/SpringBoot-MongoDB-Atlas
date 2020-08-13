@@ -19,18 +19,21 @@ home page link: https://fathomless-cove-54226.herokuapp.com/
 "description": "hostname/api/users",
 "user": null
 },
+
 {
 "name": "getById",
 "link": "https://fathomless-cove-54226.herokuapp.com/api/users/findById/5f3584030ad01b3e4e27e964",
 "description": "hostname/api/users/findById/{id}",
 "user": null
 },
+
 {
 "name": "getByFirstName",
 "link": "https://fathomless-cove-54226.herokuapp.com/api/users/findByFirstName/Luffy",
 "description": "hostname/api/users/findByFirstName/{firstName}",
 "user": null
 },
+
 {
 "name": "addLuffy",
 "link": "https://fathomless-cove-54226.herokuapp.com/api/users",
@@ -42,6 +45,7 @@ home page link: https://fathomless-cove-54226.herokuapp.com/
 "age": 20
 }
 },
+
 {
 "name": "updateUserById",
 "link": "https://fathomless-cove-54226.herokuapp.com/api/users/5f3583af0ad01b3e4e27e961",
@@ -53,6 +57,7 @@ home page link: https://fathomless-cove-54226.herokuapp.com/
 "age": 40
 }
 },
+
 {
 "name": "deleteUserById",
 "link": "https://fathomless-cove-54226.herokuapp.com/api/users/5f3583af0ad01b3e4e27e961",
