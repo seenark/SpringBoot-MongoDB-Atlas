@@ -1,6 +1,5 @@
 package demo.demo.Users;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,45 +30,45 @@ public class UserController {
     }
 
     @GetMapping(path = "/findByFirstName/{firstName}")
-    public UserModel getUserByFirstName(@PathVariable(name = "firstName") String firstName) {
-        Optional<UserModel> user = userService.getUserByFirstName(firstName);
+    public UserModel getUserByFirstName(@PathVariable(name = "firstName") final String firstName) {
+        final Optional<UserModel> user = userService.getUserByFirstName(firstName);
         if (user.isPresent()) {
             return user.get();
-        }else{
+        } else {
             throw new UserException(firstName);
         }
     }
 
     @GetMapping(path = "/findById/{id}")
-    public UserModel getUserById(@PathVariable(name = "id") String id) {
-        Optional<UserModel> user = this.userService.getUserById(id);
+    public UserModel getUserById(@PathVariable(name = "id") final String id) {
+        final Optional<UserModel> user = this.userService.getUserById(id);
         if (user.isPresent()) {
             return user.get();
-        }else{
+        } else {
             throw new UserException(id);
         }
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public void addUser(@RequestBody UserModel user) {
+    public void addUser(@RequestBody final UserModel user) {
         this.userService.createUser(user);
     }
-    
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping(path = "/{id}")
-    public void updateUser(@PathVariable(name = "id") String id, @RequestBody UserModel user) {
+    public void updateUser(@PathVariable(name = "id") final String id, @RequestBody final UserModel user) {
         if (this.userService.getUserById(id).isPresent()) {
-            UserModel newUser = new UserModel(id, user.firstName, user.lastName, user.email, user.age);
+            final UserModel newUser = new UserModel(id, user.firstName, user.lastName, user.email, user.age);
             this.userService.updateUser(newUser);
-        }else{
+        } else {
             throw new UserException(id);
         }
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping(path = "/{id}")
-    public void deleteUser(@PathVariable(name = "id") String id) {
+    public void deleteUser(@PathVariable(name = "id") final String id) {
         if (this.userService.getUserById(id).isPresent()) {
             this.userService.deleteUserById(id);
         }else{
